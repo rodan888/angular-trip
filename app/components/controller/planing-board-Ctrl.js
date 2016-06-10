@@ -2,6 +2,7 @@ var app = angular.module('app');
 
 app.controller('planBoardCtrl', ['$scope', '$http', '$window', '$timeout', 'PlaningBoard', function ($scope, $http, $window, $timeout, PlaningBoard) {  
   	$scope.tripList;
+  	$scope.selected = 1;
 
 	$http.get('test-json/planing-board.json').success(function (data) {
 		$scope.tripList = data.planningBoardVO.planningBoardElementVOList;	

@@ -183,9 +183,7 @@
 						&:before
 							width: 100%
 		>div	
-			display: block
-		.tab-item,.pop-button,.basket				
-			display: none
+			display: block				
 		.filter-wrap
 			display: block
 		.filter-wrap,.set-dropdown
@@ -205,6 +203,11 @@
 				padding: 0
 				button
 					width: 190px
+		.tab-item,.pop-button,.basket				
+			display: none	
+		.tab-item
+			&.active
+				display: block		
 		.basket-wrap
 			width: 100%			
 			.set-dropdown
@@ -236,7 +239,8 @@
 	.card
 		margin-right: 0
 		margin-top: 0
-		width: 100%
+		width: 100%!important
+		display: block
 		&:first-child:after
 			display: none
 		.time-line
@@ -247,8 +251,11 @@
 				left: -6px
 			.date.start
 				top: 0				
-		.cont-wrap
+		.cont-wrap,	.visit-place, .ticket
 			padding: 0
+			.date.start
+				top: 0
+				left: 0
 			>div
 				display: block
 				width: 100%!important
@@ -256,6 +263,7 @@
 				&:before,&:after
 					display: none
 			.preview
+				height: 250px
 				.img-wrap
 					height: 135px
 					img
@@ -271,7 +279,7 @@
 				padding: 0
 				padding-left: 50px
 				padding-right: 50px
-				margin-top: 50px
+				margin-top: 0px
 				box-shadow: 0 2px 4px $gray
 				.transport
 					position: absolute
@@ -304,6 +312,8 @@
 	.add-sity
 		width: 320px
 		padding: 25px 15px
+		.input
+			margin-bottom: 5px
 
 	footer
 		text-align: center

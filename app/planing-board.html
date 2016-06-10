@@ -5,15 +5,22 @@
 
 		<div class="mob-tabs">
 				<ul>
-					<li data-show="trip" class="active">Trip properties</li>
-					<li data-show="budget">Budget</li>
+					<li data-show="trip"					   
+					    ng-class="{'active': (selected == '1')}" 
+					    ng-click='selected=1'>Trip properties</li>
+					<li data-show="budget"
+						ng-class="{'active': (selected == '2')}" 
+						ng-click='selected=2'>Budget</li>
 				</ul>
 		</div>
 
 		<div class="pop-button euro">
 			<button type="button"><i class="icon icon-cog"></i>Eurotrip</button>
 		</div>	
-		<div class="filter-wrap tab-item" id="trip"> 
+		<div 
+			class="filter-wrap tab-item" 
+			ng-class="{'active': (selected == '1')}"
+			id="trip"> 
 
 			<div class="form-group">					
 				<label>Adults</label>
@@ -73,7 +80,11 @@
 			</div>		
 		</div>
 		
-		<div class="basket-wrap tab-item" id="budget">
+		<div 
+			class="basket-wrap tab-item" 
+			ng-class="{'active': (selected == '2')}"
+			id="budget"
+			>
 
 			<div class="pop-button">
 				<button 
