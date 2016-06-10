@@ -1,0 +1,356 @@
+@import "bourbon"
+
+/*==========  Desktop First Method  ==========*/
+@media only screen and (max-width : 1337px)
+	header
+		background-size: auto 530px
+	main
+		max-width: 985px
+	.card
+		// &:nth-child(4n+4), &:nth-child(5n+5)
+		// 	&:before
+		// 		display: none
+		&:nth-child(3n+3), &:nth-child(4n+4)
+			&:before
+				position: absolute
+				content: ''
+				top: 0
+				right: -300px
+				width: 300px
+				height: 1px 
+				background-color: $blue
+		&:nth-child(4n+4)
+			&:before
+				display: block
+				right: initial
+				left: -300px
+		&:last-child
+			&:before
+				position: absolute
+				content: ''
+				top: 0
+				right: -900px
+				width: 900px
+				height: 1px 
+				background-color: $gray
+@media only screen and (max-width : 1037px)
+	main
+		max-width: 640px
+	.card
+		// &:nth-child(4n+4), &:nth-child(5n+5),&:nth-child(3n+3)
+		// 	&:before
+		// 		display: none
+		&:nth-child(3n+3), &:nth-child(2n+2)
+			&:before
+				position: absolute
+				content: ''
+				top: 0
+				right: -300px
+				width: 300px
+				height: 1px 
+				background-color: $blue
+				display: block
+		&:nth-child(3n+3)
+			&:before
+				display: block
+				right: initial
+				left: -300px
+		&:last-child
+			&:before
+				position: absolute
+				content: ''
+				top: 0
+				right: -900px
+				width: 900px
+				height: 1px 
+				background-color: $gray
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	
+	/*Disable Animation on Mobile Devices*/
+	.animated
+		/*CSS transitions*/
+		@include transition(none !important);
+		/*CSS transforms*/
+		@include transform(none !important);
+		/*CSS animations*/
+		@include transform(none !important);
+
+@media only screen and (max-width : 668px)
+	main
+		max-width: 320px
+	.clrp
+		padding: 0 15px
+	.mob-nav
+		display: block
+		.logo
+			display: block
+			padding-top: 0
+
+	.main-search
+		background-size: auto 100%
+		padding-top: 50px
+		.form-group,.button-block
+			margin-top: 20px
+	header
+		.clrp
+			padding: 0
+		.logo
+			display: none		
+		nav
+			position: absolute
+			top: -1px
+			left: 0
+			width: 100%
+			background-color: $blue
+			z-index: -1
+			padding: 5px						
+			@include opacity(0)
+			@include transition(opacity 0.5s)
+			ul
+				li
+					display: block
+					text-align: center
+					margin-top: 30px
+					@include transition(margin 0.3s)			
+			&.active
+				z-index: 1000
+				@include opacity(1)				
+				ul
+					li
+						margin-top: 0
+						&:nth-child(1)
+							@include transition-delay(0.1s)
+						&:nth-child(2)
+							@include transition-delay(0.2s)
+						&:nth-child(3)
+							@include transition-delay(0.3s)
+						&:nth-child(4)
+							@include transition-delay(0.4s)
+						&:nth-child(5)
+							@include transition-delay(0.5s)
+
+	.tag-search
+		.button-block
+			margin-top: 20px
+
+	.filter-block			
+		position: absolute
+		top: 100px
+		left: 0
+		width: 100%
+		@include opacity(0)
+		@include transition(all 0.5s)
+		z-index: -1
+		&.active
+			z-index: 1000
+			@include opacity(1)
+			top: 0px
+		.mob-tabs
+			display: block
+			background-color: $white
+			ul
+				font-size: 0
+				li
+					width: 50%
+					display: inline-block
+					line-height: 40px
+					font-size: $fmd
+					color: $orange
+					text-align: center
+					position: relative
+					&:before
+						position: absolute
+						content: ''
+						width: 0
+						height: 2px
+						bottom: -1px
+						left: 0
+						background-color: $orange
+						@include transition(width 0.3s)
+					&.active
+						&:before
+							width: 100%
+		>div	
+			display: block
+		.tab-item,.pop-button,.basket				
+			display: none
+		.filter-wrap
+			display: block
+		.filter-wrap,.set-dropdown
+			width: 100%
+			text-align: right			
+			padding: 15px 70px 15px 0
+			>div
+				display: block
+				margin-bottom: 15px
+			.form-group
+				display: block
+				select
+					width: 190px				
+				&.checkbox
+					text-align: center
+			.button-block
+				padding: 0
+				button
+					width: 190px
+		.basket-wrap
+			width: 100%			
+			.set-dropdown
+				@include opacity(1)		
+				z-index: 100
+				position: inherit
+				background-color: $blue
+				box-shadow: none
+				width: 100%
+				color: $white
+				&:after,&:before
+					display: none
+				>div
+					text-align: right
+					margin-right: 0
+				.count-wrap
+					width: 190px
+					.input
+						background-color: $white
+				.label,.price
+					color: $white
+					font-weight: 100
+				.price-block
+					span
+						vertical-align: sub
+				
+
+
+	.card
+		margin-right: 0
+		margin-top: 0
+		width: 100%
+		&:first-child:after
+			display: none
+		.time-line
+			background-color: transparent
+			.date.end
+				top: 295px
+				right: initial
+				left: -6px
+			.date.start
+				top: 0				
+		.cont-wrap
+			padding: 0
+			>div
+				display: block
+				width: 100%!important
+				height: 250px
+				&:before,&:after
+					display: none
+			.preview
+				.img-wrap
+					height: 135px
+					img
+						min-width: 100%
+				.descr
+					h3
+						font-size: $flg
+						margin-bottom: 0
+					.date
+						margin-bottom: 0				
+			.info
+				height: 130px
+				padding: 0
+				padding-left: 50px
+				padding-right: 50px
+				margin-top: 50px
+				box-shadow: 0 2px 4px $gray
+				.transport
+					position: absolute
+					top: 50%
+					left: 8px
+					margin-top: -16px			
+					i
+						font-size: 32px
+				.start
+					margin-bottom: 3px
+				.price	
+					position: absolute
+					top: 50%
+					right: 4px
+					margin-top: -19px
+			.remove
+				font-size: $imd
+				.fd
+					position: initial!important
+					font-size: $fmd!important
+	.add-card
+		width: 100%
+		margin-top: 0
+		button
+			width: 100%
+
+	.add-card,.card
+		&:before
+			display: none!important
+	.add-sity
+		width: 320px
+		padding: 25px 15px
+
+	footer
+		text-align: center
+		padding-bottom: 10px		
+		nav 
+			text-align: center
+			ul 
+				li
+					margin-left: 5px
+					a
+						padding: 5px 6px	
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	/**/
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+
+

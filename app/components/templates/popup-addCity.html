@@ -1,0 +1,96 @@
+<div class="popup" data-ng-class="{'active': popupE}">
+	<div class="popup-content">	
+		<div class="add-sity">
+			<span 
+				class="fade_out" 
+				data-ng-click="popupDisable()">
+				&#9587;
+			</span>
+			<h3>Add sity</h3>
+			<div class="container-fluid">
+				<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="in">Select country</label>
+						<input type="text" class="input">	
+					</div>						
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="in">Select sity</label>
+						<input type="text" class="input">	
+					</div>				
+				</div>
+
+
+				<div class="col-md-6">
+					<div class="form-group calendar"
+						data-ng-click="calendar.active = !calendar.active">
+						<label>Time start</label>
+						<i class="icon icon-calendar"></i>
+						<input 
+							type="text" 
+							class="input" 
+							disabled 							
+							value="{{start.format('MM.DD.YYYY')}}">						
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group calendar"
+						data-ng-click="calendar.active = !calendar.active">
+						<label>Time end</label>		
+						<i class="icon icon-calendar"></i>
+						<input type="text" class="input" disabled value="{{end.format('MM.DD.YYYY')}}">
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div 
+						class="calendar-wrap"
+						data-ng-class="{true: 'active', false: ''}[calendar.active]">
+						<calendar class="start" selected="start"></calendar>
+						<calendar class="end" selected="end"></calendar>
+					</div>
+				</div>
+
+					<div class="col-md-9">
+						<div class="form-group">
+							<label for="in">Objects near hotel</label>
+							<input type="text" name="in" class="input">	
+						</div>						
+					</div>
+					<div class="col-md-3">
+						<div class="select-block">							
+							<div class="form-group">							
+									<label>Persons</label>
+									<select class="default full">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+									</select>
+								</div>							
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="form-group">
+							<label for="in">Objects near hotel</label>
+							<input type="text" name="in" class="input">	
+						</div>					
+					</div>
+
+				</div>
+			</div>
+			<div class="button-block">
+				<button class="button" type="button" class="light">Cansel</button>			
+			</div>
+
+			<div class="button-block">
+				<button class="button" type="button">Add city</button>
+				<span class="label">
+					Transportation  between cities
+					will be added automatically
+				</span>
+			</div>
+	
+		</div>	
+	</div>	
+</div>

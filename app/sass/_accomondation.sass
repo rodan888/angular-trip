@@ -1,0 +1,95 @@
+.filter-left
+	.form-group
+		margin-bottom: 10px
+	fieldset
+		margin-top: $s20
+	.button-block
+		margin-top: $s30
+
+.list-item
+	position: relative
+	min-height: 175px
+	padding: $s20 185px 10px 220px
+	border: 1px solid $gray	
+	margin-bottom: $s20
+	box-shadow: none
+	@include transition(box-shadow 0.3s)
+	&:hover
+		box-shadow: 0 1px 4px $black
+	.img-wrap
+		position: absolute
+		top: $s20
+		left: $s20
+		width: 180px
+		height: 136px		
+		img
+			height: 100%
+	.price-item
+		position: absolute
+		top: $s20
+		right: $s20
+		width: 160px
+		height: 136px
+		text-align: right
+		.price
+			line-height: 30px
+		.label
+			margin-bottom: 0
+		.button-block
+			padding: 0
+			margin-top: $s19
+	.descr-item
+		position: relative
+		min-height: 136px
+		padding-bottom: 30px
+		h3
+			font-size: $flg
+	.list-item-nav
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		ul
+			li
+				display: inline-block
+				&:last-child
+					text-decoration: underline
+				a
+					display: block					
+					padding: 5px 7px
+					color: $blue
+					padding-bottom: 0
+					font-size: $fsm
+					&:hover
+						text-decoration: underline
+
+.star-cb-group
+	unicode-bidi: bidi-override
+	direction: rtl
+	&:hover > input + label:hover ~ label:before, &:hover > input + label:hover:before 
+		content: "★"
+		color: $red
+	&:hover input + label:before  
+		content: "★"
+		color: $gray-black
+		text-shadow: none
+	input 
+		display: none
+		+ label  
+			display: inline-block
+			overflow: hidden
+			text-indent: 9999px
+			width: 12px
+			white-space: nowrap
+			cursor: pointer
+			margin-left: -2px
+			font-size: $fmd
+			margin-bottom: 0
+			&:before 
+				display: inline-block
+				text-indent: -9999px
+				content: "★"
+				color: $gray
+		&:checked ~ label:before, +label:hover ~ label:before, + label:hover:before 
+			content: "★"
+			color: $orange	

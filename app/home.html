@@ -1,0 +1,64 @@
+		<div class="main-search" style="background-image: url('img/main.jpg")>		
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="title big">Trip Composer</h2>
+						<p class="title">Plan your multi-city trip with transportationand accomodation in one click</p>
+					</div>
+					<div class="col-md-2">
+						<div class="form-group">						
+							<input type="text" class="input" placeholder="City">	
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div class="form-group">						
+							<input type="text" class="input" placeholder="City">	
+						</div>
+						<a href="#">Skip city selection</a>
+					</div>
+					<div class="col-md-2">						
+							<div class="button-block">
+								<button type="button" class="button orange full">Plan</button>
+							</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+		<main data-ng-controller="homePageCtrl">
+
+			<h2 class="title black">Most popular trips</h2>
+    		
+			<div class="tag-search">
+				<tags-input ng-model="tags"></tags-input>			
+				<div class="button-block">
+					<button type="button" class="button  big orange">Search</button>
+				</div>			
+			</div>
+
+			<div class="country-wrap">
+
+				<div 
+					data-ng-repeat="item in countries"
+					class="country">
+					<div class="img-wrap">
+						<img src="img/{{item.img}}" alt="{{item.title}}">
+					</div>
+					<div class="descr">
+						<h3 class="title">{{item.title}}</h3>
+						<span class="label">
+							Rome - Florence - Venice - milano
+						</span>
+						<p>{{item.time}} days from <span><i class="fa fa-eur"></i> {{item.price}}</span></p>					
+					</div>
+					<div class="button-block">
+						<button class="button" type="button">Plan this trip!</button>
+					</div>
+				</div>				
+				
+				<div class="button-block center">
+					<a href="#" class="button big orange">More trips</a>
+				</div>
+			</div>
+		</main>
+
+	<ng-include src="'components/templates/footer.html'"></ng-include> 

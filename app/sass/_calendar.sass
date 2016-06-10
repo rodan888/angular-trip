@@ -1,0 +1,183 @@
+calendar
+	color: $white
+	text-align: center
+	display: block
+	margin: 0 auto 12px
+	width: 230px
+	.header
+		background-color: $orange
+		color: $white
+		text-align: center
+		position: relative
+		height: 34px
+		font-size: $fsm
+		i
+			font-size: $fmd
+			position: absolute
+			top: 0px
+			height: 100%
+			line-height: 33px
+			cursor: pointer
+			@include transition(color 0.3s)
+			&:hover
+				color: $plane
+			&.icon-arrow-right
+				right: 5px
+			&.icon-arrow-left
+				left: 5px
+		span
+			line-height: 33px
+	.week
+		background-color: $blue
+		cursor: pointer
+		&.names
+			background-color: $plane
+			span
+				max-width: 29px
+				color: $black
+				border: none
+				font-size: $fx
+		span
+			width: calc(100% / 7)
+			display: inline-block			
+			padding: 6px 0
+			position: relative
+			z-index: 1
+			// border: 1px solid $white
+			&.selected
+				color: $white!important
+				&:after
+					position: absolute
+					content: ''
+					top: 0
+					left: 0
+					width: 100%
+					height: 100%
+					background-color: $orange
+					border-radius: 3px
+					z-index: -1
+			&.different-month
+				color: $black
+.calendar-wrap
+	position: relative	
+	&.active
+		calendar
+			top: 0
+			opacity: 1
+			z-index: 10	
+	calendar
+		z-index: -1
+		position: absolute
+		top: 230px
+		opacity: 0
+		left: -42px
+		@include transition(all 0.3s)
+		&.end
+			left: 189px
+
+
+
+
+// .data-filter
+// 	width: 230px
+// 	margin: 0 auto
+// 	background-color: $white
+// 	min-height: 40px
+// 	position: relative
+// 	.item-input
+// 		position: relative
+// 		margin-bottom: 15px
+// 		button
+// 			position: absolute
+// 			top: 8px
+// 			left: 10px
+// 			padding: 0
+// 			background-color: transparent
+// 			font-size: 17px
+// 			transition: color 0.3s
+// 			color: #6A737F
+// 			z-index: 110
+// 			&:hover,&.picker-active
+// 				color: $red
+// 			i
+// 				display: inline-block
+// 				margin: 0
+// 				padding-right: 10px
+// 				border-right: 1px solid $orange
+// 				font-size: 18px
+// 		input
+// 			display: inline-block
+// 			margin-left: 40px
+// 			min-width: 100px
+// 			width: 80%
+// 			height: 40px
+// 			color: $blue
+// 			background-color: $white
+// 			border: none
+// 	.inner-datapicker
+// 		position: absolute
+// 		top: 41px
+// 		display: none
+// 		left: 0
+// 		padding-left: 20px
+// 		height: 240px
+// 		width: 690px
+// 		background-color: $white
+// 		z-index: 100
+// 		box-shadow: 2px 4px 5px $orange
+// 		&.picker-active
+// 			display: block
+// 		calendar
+// 			position: absolute
+// 			top: 0
+// 			&.first
+// 				left: 200px		
+// 			&.last
+// 				left: 445px
+// 			.header,.week.names
+// 				background-color: $white	
+// 				color: $red			
+// 				span
+// 					border-color: $white
+// 			.week
+// 				background-color: $white
+// 				span
+// 					background-color: $white
+// 					color: $blue
+// 					border-color: $white
+// 		.data-fields
+// 			width: 176px
+// 			position: absolute
+// 			height: 240px
+// 			top: 0
+// 			left: 10px
+// 			.w-dates
+// 				display: inline-block
+// 				width: 49%
+// 			strong
+// 				color: $blue
+// 				display: inline-block
+// 				margin-bottom: 5px
+// 			input
+// 				min-width: 60px
+// 				height: 32px
+// 				width: 100%
+// 				border-radius: 5px
+// 				background-color: $orange
+// 			select
+// 				margin-top: 5px
+// 				width: 100%
+// 				height: 28px
+// 				line-height: 15px
+// 				border-radius: 5px
+// 				border-color: $orange
+// 				background-color: $orange
+// 			button
+// 				padding: 3px 6px 
+// 				border-radius: 5px
+// 				margin-top: 20px
+// .map-calendar
+// 	margin: 10px 3px
+// 	.map-button
+// 		margin: 3px 39px
+// 		text-align: right

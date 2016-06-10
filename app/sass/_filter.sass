@@ -1,0 +1,190 @@
+.filter-block
+	background-color: $blue
+	min-height: 72px
+	border-top: 1px solid $white
+	color: $white
+	position: relative
+	.mob-tabs
+		display: none		
+	>div
+		display: inline-block
+		vertical-align: middle
+	.euro		
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			width: 1px 
+			height: 52px
+			top: 10px
+			right: 0
+			background-color: $white
+			opacity: 0.5
+		button
+			padding: 0 57px
+			font-size: $fmd
+		i
+			display: inline-block
+			background-color: $white
+			color: $blue
+			@include border-radius(3px)			
+	.form-group
+		font-size: $fsm		
+		display: inline-block	
+		.slect,select
+			border: none	
+			width: auto
+			&.number
+				width: 55px
+		span.label,label
+			margin-bottom: 0px
+			margin-right: 5px
+			display: inline-block			
+			font-size: $fx
+.filter-wrap
+	width: calc(100% - 520px)
+	text-align: center
+	>div
+		display: inline-block
+		vertical-align: middle
+		margin-right: 3px
+.basket-wrap
+	width: 298px
+	>div
+		display: inline-block
+		vertical-align: top
+		&:first-child
+			width: 65%			
+		&:nth-child(2)
+			width: 35%
+.basket
+	min-height: 74px	
+	padding-left: 40px	
+	padding-right: 7px
+	background-color: $light-orange
+	color: $white
+	position: relative
+	margin-left: -4px
+	>i
+		position: absolute
+		font-size: $flg
+		top: 24px
+		left: 10px
+	.price-wrap
+		position: absolute
+		min-width: 65px
+		top: 50%
+		left: 50px
+		@include transform(translateY(-50%))
+		span
+			display: block
+			font-size: $fmd
+
+
+	
+.pop-button
+	text-transform: uppercase
+	font-size: $fsm
+	font-weight: 600	
+	line-height: 74px
+	button
+		width: 100%
+		padding: 0
+		background-color: transparent
+		box-shadow: none	
+		font-size: $fsm	
+		&:active
+			box-shadow: inset 1px 1px 3px $black	
+		&.orange
+			background-color: $orange
+	i
+		font-size: $ism
+		margin-right: 5px
+		padding: 1px
+
+.price-block
+	min-width: 140px		
+	span
+		display: inline-block
+		font-weight: 600
+		width: 49%		
+		vertical-align: top
+		&.label
+			line-height: 16px
+			font-size: $fsm
+		&.price
+			width: 45%
+			color: $blue
+			font-size: $flg
+			line-height: 30px
+
+			
+.set-dropdown
+	font-family: 'RobotoRegular'
+	position: absolute
+	width: 86%
+	min-height: 72px	
+	left: 7%	
+	background-color: $white
+	box-shadow: 0 1px 7px $black	
+	padding-top: 20px
+	color: $black
+	text-align: center	
+	bottom: -250px
+	z-index: -1
+	@include opacity(0)
+	@include border-radius(5px)
+	@include transition(all 0.5s)	
+	&.active
+		@include opacity(1)
+		bottom: -100px
+		z-index: 100
+	&:after
+		position: absolute
+		content: ''
+		width: 30px
+		height: $s15
+		right: 105px
+		top: 0
+		background-color: $white
+	&:before
+		position: absolute
+		content: ''
+		width: $s17
+		box-shadow: -1px -1px 2px #6D6D6D
+		height: $s17
+		transform: rotate(45deg)
+		z-index: -1
+		top: -8px
+		right: 111px
+		background-color: $white
+	.count-button
+		.count-wrap
+			width: 80px
+		.label
+			display: inline-block
+	.form-group
+		select,input.input
+			border: 1px solid $gray
+	>div
+		display: inline-block
+		vertical-align: top
+		margin-right: 10px
+		text-align: left
+		&:last-child
+			margin-top: -5px
+	span.label
+		color: $black
+		font-weight: 600
+	.select-block
+		.select
+			border: 1px solid $black
+			.select_label
+				line-height: 29px
+			.select_expand
+				&:after
+					top: 14px					
+		.select_input:checked + .select_label 
+			height: 28px
+			margin-top: -30px	
+

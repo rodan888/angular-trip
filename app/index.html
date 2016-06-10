@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+<head>
+<meta charset="UTF-8">
+<title>Angular tripcomposer</title>
+<link rel="shortcut icon" href="app/img/favicon.png">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<script src="libs/angular/angular.min.js"></script>
+<script src="libs/angular-route/angular-route.min.js"></script>
+<script src="libs/angular-resource/angular-resource.min.js"></script>
+<script src="libs/angular-animate/ng-animate.min.js"></script>
+
+<script src="libs/ng-map/ng-map.min.js"></script>
+
+<!-- Over script library -->
+<script src="libs/moment/moment.min.js"></script>
+<script src="libs/underscore/underscore.min.js"></script>
+<script src="libs/jQuery/jquery-2.2.0.min.js"></script>
+<script src="app.js"></script>	
+
+<!-- Temporary paths to controllers -->
+<script src="components/controller/homepage-Ctrl.js"></script>
+<script src="components/controller/planing-board-Ctrl.js"></script>
+<script src="components/controller/accomon-list-Ctrl.js"></script>
+
+<!-- Over components -->
+<script src="components/directives/directives.js"></script>
+<script src="components/services/routes.js"></script>
+<script src="components/services/filters.js"></script>
+<script src="components/services/factory.js"></script>
+<script src="components/services/mapService.js"></script>
+<script src="components/services/services.js"></script>
+
+<script src="components/directives/ng-tags-input.js"></script>
+<script src="components/directives/im-autocomplete.js"></script>
+
+
+
+<!-- PROD COMPONENTS -->
+<link rel="stylesheet" href="css/vendor.min.css">
+<link rel="stylesheet" href="css/main.min.css">
+
+<!-- PROD SCRIPTS -->
+<!-- <script src="prod/js/vendor.min.js"></script> -->
+<!-- <script src="prod/js/controllers.min.js"></script> -->
+</head>
+
+<body data-ng-cloak>
+	<header class="small">	
+	<div class="mob-nav">
+				<h2 class="title">	
+					<a href="#/" class="logo">
+						<img src="img/logo.png" alt="tripcomp">
+					</a>
+				</h2>
+			<div 
+				class="mob-menu" 
+				data-show="mob-nav"
+				data-ng-click="mob.check = !mob.check"
+				data-ng-class="{true: 'active', false: ''}[mob.check]">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="mob-filter" data-show="mob-filter" data-ng-click="mob.cog = !mob.cog">
+				<i class="icon icon-cog"></i>
+			</div>
+			<div class="mob-basket">
+				<!-- <i class="fa fa-question-circle"></i> -->
+				<i class="icon icon-cart"></i>
+			</div>
+		</div>
+		<div class="container clrp">
+			<div class="row">
+				<div class="col-md-3 col-sm-3">
+					<a href="#/" class="logo">
+						<img src="img/logo.png" alt="tripcomp">
+					</a>
+				</div>
+				<div class="col-md-9 col-sm-9">
+					<nav 
+						id="mob-nav"
+						data-ng-class="{true: 'active', false: ''}[mob.check]">
+						<ul>
+							<li>
+								<a data-ng-click="mob.check = !mob.check" href="#/">Home</a>
+							</li>
+							<li>
+								<a data-ng-click="mob.check = !mob.check" href="#/pb">Planing Board</a>
+							</li>
+							<li>
+								<a data-ng-click="mob.check = !mob.check" href="#/al">Accomon list</a>
+							</li>
+							<li>
+								<a data-ng-click="mob.check = !mob.check" href="#">Popular Trips</a>
+							</li>
+							<li>
+								<a data-ng-click="mob.check = !mob.check" href="#">About</a>
+							</li>
+							<li>
+								<a data-ng-click="mob.check = !mob.check"	 href="#">Help</a>
+							</li>
+							<li>
+								<a data-ng-click="mob.check = !mob.check" href="#"><i class="icon icon-enter"></i> Log in</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="container-fluid anim-wrap" 
+		data-ng-class="animation"
+		data-ng-controller="animateCtrl">
+		<div class="view" data-ng-view></div>
+	</div>
+
+</body>
+</html>

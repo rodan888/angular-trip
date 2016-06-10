@@ -1,0 +1,412 @@
+<div class="accomon-wrap" data-ng-controller="accomondationCtrl">
+		<div class="filter-block" id="mob-filter">
+
+		<div class="mob-tabs">
+				<ul>
+					<li data-show="trip" class="active">Trip properties</li>
+					<li data-show="budget">Budget</li>
+				</ul>
+		</div>
+
+		<div class="pop-button euro">
+			<button type="button"><i class="icon icon-cog"></i>Eurotrip</button>
+		</div>	
+		<div class="filter-wrap tab-item" id="trip"> 
+
+			<div class="form-group">					
+				<label>Adults</label>
+					<select class="number">
+						<option value="">1</option>
+						<option value="">2</option>
+						<option value="">3</option>
+				</select>
+			</div>
+
+			<div class="form-group">					
+				<label>Children</label>
+					<select class="number">
+						<option value="">1</option>
+						<option value="">2</option>
+						<option value="">3</option>
+				</select>
+			</div>	
+
+			<div class="form-group">					
+				<label>Rooms</label>
+					<select class="number">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+				</select>
+			</div>
+
+			<div class="form-group checkbox">
+				<input type="checkbox" id="all">
+				<label for='all'>    		
+						<span>Allow down</span> 		
+				</label>
+			</div>
+	
+			<div class="form-group">					
+				<label>Economy</label>
+					<select class="default full">
+						<option value="">First</option>
+						<option value="">Second</option>
+						<option value="">Third</option>
+				</select>
+			</div>
+
+			<div class="form-group">					
+				<label>Kids Friendly</label>
+					<select class="default full">
+						<option value="">First</option>
+						<option value="">Second</option>
+						<option value="">Third</option>
+				</select>
+			</div>
+			
+			
+			<div class="button-block">
+				<button type="button">Apply</button>
+			</div>		
+		</div>
+		
+		<div class="basket-wrap tab-item" id="budget">
+
+			<div class="pop-button">
+				<button type="button" class="orange optimize">
+					<i class="icon icon-coin-dollar"></i>Optimize budget
+				</button>
+			</div>
+
+			<div class="basket">
+					<i class="icon icon-cart"></i>
+					<div class="price-wrap">
+						<span><i class="fa fa-eur"></i>400</span>
+						<span><i class="fa fa-eur"></i>800</span>
+					</div>
+			</div>
+
+			<div class="set-dropdown">
+
+				<div class="count-button">
+					<span class="label">Flexible Dates +/-</span>
+					<div class="count-wrap">
+						<input type="text" class="input" value="1">
+						<button type="button" class="increment">&#9652;</button>
+						<button type="button" class="decrement">&#9662;</button>
+					</div>
+				</div>
+
+				<div class="form-group">					
+					<label>Minimum Budget</label>
+						<select class="default full">
+							<option value="">First</option>
+							<option value="">Second</option>
+							<option value="">Third</option>
+					</select>
+				</div>				
+
+				<div class="form-group">					
+					<label>Maximum Budget</label>
+						<select class="default full">
+							<option value="">First</option>
+							<option value="">Second</option>
+							<option value="">Third</option>
+					</select>
+				</div>
+
+				<div class="price-block">
+					<span class="label">
+						Bookable total
+					</span>
+					<span class="price">
+						<i class="fa fa-eur"></i>400
+					</span>
+				</div>
+
+				<div class="price-block">
+					<span class="label">
+						Extended total
+					</span>
+					<span class="price">
+						<i class="fa fa-eur"></i>400
+					</span>
+				</div>
+
+				<div class="button-block">
+					<button type="button" class="orange">Optimize budget</button>
+				</div>
+
+
+			</div>
+		</div>
+		
+	</div>
+
+	<main>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+					<div class="filter-left">
+
+						<div class="form-group">
+							<label for="in">Hotel name</label>
+							<input type="text" name="in" class="input">	
+						</div>
+
+						<div class="form-group">
+							<label for="in">Hotel address</label>
+							<input type="text" name="in" class="input">	
+						</div>
+
+						<div class="form-group">
+							<label for="in">Objects near hotel</label>
+							<input type="text" name="in" class="input">	
+						</div>
+
+						<div class="count-button">
+							<span class="label">Flexible Dates +/-</span>
+							<div class="count-wrap">
+								<input type="text" class="input" value="1">
+								<button type="button" class="increment">&#9652;</button>
+								<button type="button" class="decrement">&#9662;</button>
+							</div>
+						</div>
+
+						<div class="form-group">
+								<label>Simple select</label>
+								<select class="default full">
+										<option value="">First</option>
+										<option value="">Second</option>
+										<option value="">Third</option>
+								</select>
+						</div>
+
+						<fieldset>
+							<span class="label">Property type</span>
+
+							<div class="form-group checkbox">
+								<input type="checkbox" id="hotel">
+								<label for='hotel'>    		
+										<span>Hotel</span> 		
+								</label>
+							</div>
+
+							<div class="form-group checkbox">
+								<input type="checkbox" id="hostel">
+								<label for='hostel'>    		
+										<span>Hostel</span> 		
+								</label>
+							</div>
+
+							<div class="form-group checkbox">
+								<input type="checkbox" id="apartments">
+								<label for='apartments'>    		
+										<span>Apartments</span> 		
+								</label>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<span class="label">Options</span>
+
+							<div class="form-group checkbox">
+								<input type="checkbox" id="hotel">
+								<label for='hotel'>    		
+										<span>Lorem</span> 		
+								</label>
+							</div>
+
+							<div class="form-group checkbox">
+								<input type="checkbox" id="hostel">
+								<label for='hostel'>    		
+										<span>Ipsum</span> 		
+								</label>
+							</div>
+
+							<div class="form-group checkbox">
+								<input type="checkbox" id="apartments">
+								<label for='apartments'>    		
+										<span>Dolor</span> 		
+								</label>
+							</div>
+						</fieldset>
+
+						<div class="button-block">
+							<button type="button" class="full">Apply</button>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-sm-10">					
+					<div class="list-wrap">
+
+						<div class="list-item">
+							<div class="img-wrap">
+								<img src="img/hotel1.jpg" alt="hotel">
+							</div>
+							<div class="descr-item">
+								<h3>Best Western Premier Opera Faub</h3>
+								<div class="star-rating">
+									<form>
+										<fieldset>
+											<span class="star-cb-group">  
+												<input type="radio" id="rating-5" name="rating" value="5" /><label for="rating-5"></label>
+												<input type="radio" id="rating-4" name="rating" value="4" checked="checked" /><label for="rating-4"></label>
+												<input type="radio" id="rating-3" name="rating" value="3" /><label for="rating-3"></label>
+												<input type="radio" id="rating-2" name="rating" value="2" /><label for="rating-2"></label>
+												<input type="radio" id="rating-1" name="rating" value="1" /><label for="rating-1"></label>
+											</span>
+										</fieldset>
+									</form>
+								</div>
+								<span class="label">Paris,  Example str. 10</span>
+								<div class="list-item-nav">
+									<ul>
+										<li><a href="#">Prices</a></li>
+										<li><a href="#">Information</a></li>
+										<li><a href="#">Gallery</a></li>
+										<li><a href="#">Map</a></li>
+										<li><a href="#">More details</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="price-item">
+								<p class="price big"><i class="normal">&#36;</i>500</p>
+								<span class="label">1 night</span>
+								<span class="label">2 persons, double room</span>
+								<div class="button-block">
+									<a href="#" class="button full">Select</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="list-item">
+							<div class="img-wrap">
+								<img src="img/hotel2.jpg" alt="hotel">
+							</div>
+							<div class="descr-item">
+								<h3>Best Western Premier Opera Faub</h3>
+								<div class="star-rating">
+									<form>
+										<fieldset>
+											<span class="star-cb-group">  
+												<input type="radio" id="2-5" name="rating" value="5" checked="checked" /><label for="2-5"></label>
+												<input type="radio" id="2-4" name="rating" value="4" /><label for="rating-4"></label>
+												<input type="radio" id="2-3" name="rating" value="3" /><label for="2-3"></label>
+												<input type="radio" id="2-2" name="rating" value="2" /><label for="2-2"></label>
+												<input type="radio" id="2-1" name="rating" value="1" /><label for="2-1"></label>
+											</span>
+										</fieldset>
+									</form>
+								</div>
+								<span class="label">Paris,  Example str. 10</span>
+								<div class="list-item-nav">
+									<ul>
+										<li><a href="#">Prices</a></li>
+										<li><a href="#">Information</a></li>
+										<li><a href="#">Gallery</a></li>
+										<li><a href="#">Map</a></li>
+										<li><a href="#">More details</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="price-item">
+								<p class="price big"><i class="normal">&#36;</i>800</p>
+								<span class="label">1 night</span>
+								<span class="label">2 persons, double room</span>
+								<div class="button-block">
+									<a href="#" class="button full">Select</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="list-item">
+							<div class="img-wrap">
+								<img src="img/hotel3.jpg" alt="hotel">
+							</div>
+							<div class="descr-item">
+								<h3>Best Western Premier Opera Faub</h3>
+								<div class="star-rating">
+									<form>
+										<fieldset>
+											<span class="star-cb-group">  
+												<input type="radio" id="3-5" name="rating" value="5" /><label for="3-5"></label>
+												<input type="radio" id="3-4" name="rating" value="4" /><label for="rating-4"></label>
+												<input type="radio" id="3-3" name="rating" value="3" checked="checked" /><label for="3-3"></label>
+												<input type="radio" id="3-2" name="rating" value="2" /><label for="3-2"></label>
+												<input type="radio" id="3-1" name="rating" value="1" /><label for="3-1"></label>
+											</span>
+										</fieldset>
+									</form>
+								</div>
+								<span class="label">Paris,  Example str. 10</span>
+								<div class="list-item-nav">
+									<ul>
+										<li><a href="#">Prices</a></li>
+										<li><a href="#">Information</a></li>
+										<li><a href="#">Gallery</a></li>
+										<li><a href="#">Map</a></li>
+										<li><a href="#">More details</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="price-item">
+								<p class="price big"><i class="normal">&#36;</i>450</p>
+								<span class="label">1 night</span>
+								<span class="label">2 persons, double room</span>
+								<div class="button-block">
+									<a href="#" class="button full">Select</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="list-item">
+							<div class="img-wrap">
+								<img src="img/hotel4.jpg" alt="hotel">
+							</div>
+							<div class="descr-item">
+								<h3>Best Western Premier Opera Faub</h3>
+								<div class="star-rating">
+									<form>
+										<fieldset>
+											<span class="star-cb-group">  
+												<input type="radio" id="3-5" name="rating" value="5" checked="checked" /><label for="3-5"></label>
+												<input type="radio" id="3-4" name="rating" value="4" /><label for="rating-4"></label>
+												<input type="radio" id="3-3" name="rating" value="3" /><label for="3-3"></label>
+												<input type="radio" id="3-2" name="rating" value="2" /><label for="3-2"></label>
+												<input type="radio" id="3-1" name="rating" value="1" /><label for="3-1"></label>
+											</span>
+										</fieldset>
+									</form>
+								</div>
+								<span class="label">Paris,  Example str. 10</span>
+								<div class="list-item-nav">
+									<ul>
+										<li><a href="#">Prices</a></li>
+										<li><a href="#">Information</a></li>
+										<li><a href="#">Gallery</a></li>
+										<li><a href="#">Map</a></li>
+										<li><a href="#">More details</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="price-item">
+								<p class="price big"><i class="normal">&#36;</i>1550</p>
+								<span class="label">1 night</span>
+								<span class="label">2 persons, double room</span>
+								<div class="button-block">
+									<a href="#" class="button full">Select</a>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</div>		
+<ng-include src="'components/templates/footer.html'"></ng-include> 

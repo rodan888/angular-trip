@@ -1,0 +1,254 @@
+// #cards
+.add-card
+	width: 200px
+	background-color: $gray-light	
+	padding: 95px 15px 0
+	height: 355px
+	position: relative
+	display: inline-block
+	vertical-align: top
+	margin-top: 103px
+	&:before
+		position: absolute
+		content: ''
+		top: -53px
+		right: -500px
+		width: 900px
+		height: 1px 
+		background-color: $gray
+		z-index: -1
+	>i
+		position: absolute
+		font-size: 40px
+		top: 45px
+		left: 15px
+		color: $gray-black
+	h3
+		color: $black			
+		font-size: 21px			
+	p
+		color: $gray-black
+		font-size: 14px
+		margin-top: 10px
+		margin-bottom: 60px
+	button
+		height: 122px
+		width: 200px
+		position: absolute
+		bottom: 0
+		left: 0
+		background-color: $orange
+		border-radius: 3px
+		box-shadow: 1px 1px 3px #333
+		color: $white
+		text-transform: uppercase
+		i
+			font-size: 40px
+			display: block
+			text-align: center
+.card
+	display: inline-block
+	vertical-align: top
+	width: 199px
+	position: relative
+	margin-right: 10px
+	margin-top: 50px
+	margin-bottom: 50px
+	transition: all 0.3s
+	background-color: $white
+	&.small
+		width: 101px
+		&.remove-card
+			margin-right: -101px
+			opacity: 0			
+	&.remove-card
+		margin-right: -199px
+		opacity: 0
+	&:nth-child(7n+7), &:nth-child(8n+8)
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			right: -300px
+			width: 300px
+			height: 1px 
+			background-color: $blue
+	&:nth-child(8n+8)
+		&:before
+			right: initial
+			left: -300px
+	&:first-child
+		&:before
+			content: 'start point'
+			position: absolute
+			text-transform: uppercase
+			font-size: 12px
+			color: $black
+			top: -30px
+			left: -9px
+		&:after
+			position: absolute
+			content: '\25c9'
+			width: 20px
+			height: 15px
+			border-radius: 50%
+			background-color: $white
+			color: $blue
+			top: -7px
+			left: -19px
+			line-height: 15px
+			font-size: 40px
+		.cont-wrap>div:after
+			display: none	
+	&.plane
+		.info
+			background-color: $plane
+	&.bus
+		.info
+			background-color: $bus
+	&.car
+		.info
+			background-color: $car
+	&.train
+		.info
+			background-color: $blue
+	.time-line
+		position: absolute
+		width: 100%
+		height: 1px 
+		background-color: $blue	
+		top: 0px
+		left: -2px			
+	.cont-wrap,	.visit-place, .ticket
+		padding-top: 22px		
+		.info,.preview
+			display: inline-block
+			box-shadow: 0px 2px 4px $gray
+			height: 355px
+			vertical-align: top
+			// overflow: hidden				
+			position: relative		
+			&:before
+				position: absolute
+				content: ''
+				width: 2px
+				height: calc(100% + 53px)
+				top: -53px
+				left: -8px
+				border: 1px dotted $blue
+			&:after
+				position: absolute
+				content: ''
+				width: 10px
+				height: 10px
+				border-radius: 50%
+				background-color: $blue
+				top: -58px
+				left: -12px
+		.remove
+			display: block
+			width: 195px
+			height: auto
+			text-align: right
+			padding: 3px 2px
+			box-shadow: none
+			position: relative
+			&:before, &:after
+				display: none
+			a,button
+				color: $gray
+				margin-left: 5px
+				background-color: transparent
+				&.fd
+					position: absolute
+					bottom: 5px
+					left: 0
+					font-size: 12px
+					border: 1px solid $gray
+					padding: 0px 7px
+		.preview
+			margin-right: 10px
+			border-radius: 4px
+			width: 195px							
+			&:hover img
+				min-height: 115%	
+			.img-wrap
+				border-top-left-radius: 4px
+				border-top-right-radius: 4px
+			.descr					
+				color: $light		
+				padding: 10px	
+				padding-left: 15px		
+				h3
+					color: $black
+					margin-bottom: 10px
+					font-size: 28px
+				.date-small
+					margin-bottom: 10px	
+		.info
+			width: 99px				
+			color: $white
+			padding: 55px 8px 0
+
+			.transport
+				text-align: center
+				margin-bottom: 15px
+				i
+					font-size: 40px
+			.start, .end
+				margin-bottom: 25px
+				p
+					font-size: 12px
+				p:first-child
+					font-size: 15px			
+			.price
+				font-size: 24px
+				font-weight: 600
+				color: $white
+		.date
+			position: absolute
+			width: 107px
+			height: 35px	
+			top: -45px
+			right: 1px
+			padding-top: 2px
+			&.start
+				left: -6px
+			span
+				display: block
+				line-height: 16px					
+				&.number					
+					font-size: 36px
+					display: inline-block
+					line-height: 35px
+					color: $black	
+				&.mounth
+					text-transform: uppercase
+					font-size: 12px
+					color: $black
+					font-weight: 600
+				&.day
+					color: $light
+					font-size: 12px
+	.ticket
+		margin-top: 32px
+		
+.country
+	display: inline-block
+	width: 300px
+	vertical-align: top
+	box-shadow: 0px 2px 4px $gray
+	text-align: left
+	margin-right: 10px
+	margin-bottom: 30px
+	padding: 5px
+	padding-bottom: 15px
+	.title
+		color: $black
+		text-align: left
+		margin: 5px 0 10px
+	.label
+		color: $gray-black
+		font-size: $fsm
+	.button-block
+		margin-top: 20px

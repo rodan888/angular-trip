@@ -1,0 +1,304 @@
+	<div class="pb-wrap" data-ng-controller="planBoardCtrl">
+		<div class="filter-block" 
+				id="mob-filter"
+				data-ng-class="{true: 'active', false: ''}[mob.cog]">
+
+		<div class="mob-tabs">
+				<ul>
+					<li data-show="trip" class="active">Trip properties</li>
+					<li data-show="budget">Budget</li>
+				</ul>
+		</div>
+
+		<div class="pop-button euro">
+			<button type="button"><i class="icon icon-cog"></i>Eurotrip</button>
+		</div>	
+		<div class="filter-wrap tab-item" id="trip"> 
+
+			<div class="form-group">					
+				<label>Adults</label>
+					<select class="number">
+						<option value="">1</option>
+						<option value="">2</option>
+						<option value="">3</option>
+				</select>
+			</div>
+
+			<div class="form-group">					
+				<label>Children</label>
+					<select class="number">
+						<option value="">1</option>
+						<option value="">2</option>
+						<option value="">3</option>
+				</select>
+			</div>	
+
+			<div class="form-group">					
+				<label>Rooms</label>
+					<select class="number">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+				</select>
+			</div>
+
+			<div class="form-group checkbox">
+				<input type="checkbox" id="all">
+				<label for='all'>    		
+						<span>Allow down</span> 		
+				</label>
+			</div>
+	
+			<div class="form-group">					
+				<label>Economy</label>
+					<select class="default full">
+						<option value="">First</option>
+						<option value="">Second</option>
+						<option value="">Third</option>
+				</select>
+			</div>
+
+			<div class="form-group">					
+				<label>Kids Friendly</label>
+					<select class="default full">
+						<option value="">First</option>
+						<option value="">Second</option>
+						<option value="">Third</option>
+				</select>
+			</div>
+			
+			
+			<div class="button-block">
+				<button class="button" type="button">Apply</button>
+			</div>		
+		</div>
+		
+		<div class="basket-wrap tab-item" id="budget">
+
+			<div class="pop-button">
+				<button 
+					type="button" 
+					class="orange optimize"
+					data-ng-click="optmize.check = !optmize.check"
+					data-ng-class="{true: 'active', false: ''}[optmize.check]">
+					<i class="icon icon-coin-dollar"></i>Optimize budget
+				</button>
+			</div>
+
+			<div class="basket">
+					<i class="icon icon-cart"></i>
+					<div class="price-wrap">
+						<span><i class="fa fa-eur"></i>400</span>
+						<span><i class="fa fa-eur"></i>800</span>
+					</div>
+			</div>
+
+			<div class="set-dropdown" data-ng-class="{true: 'active', false: ''}[optmize.check]">
+				<div class="count-button">
+					<span class="label">Flexible Dates +/-</span>
+					<div class="count-wrap">
+						<input type="number" class="input" data-ng-model="count">
+						<button 
+							type="button" 
+							class="increment"
+							data-ng-click="count = count+1">&#9652;</button>
+						<button 
+							type="button" 
+							class="decrement" 							
+							data-ng-click="count = count-1">&#9662;</button>
+					</div>
+				</div>
+
+				<div class="form-group">					
+					<label>Minimum Budget</label>
+						<select class="default full">
+							<option value="">First</option>
+							<option value="">Second</option>
+							<option value="">Third</option>
+					</select>
+				</div>				
+
+				<div class="form-group">					
+					<label>Maximum Budget</label>
+						<select class="default full">
+							<option value="">First</option>
+							<option value="">Second</option>
+							<option value="">Third</option>
+					</select>
+				</div>
+
+				<div class="price-block">
+					<span class="label">
+						Bookable total
+					</span>
+					<span class="price">
+						<i class="fa fa-eur"></i>400
+					</span>
+				</div>
+
+				<div class="price-block">
+					<span class="label">
+						Extended total
+					</span>
+					<span class="price">
+						<i class="fa fa-eur"></i>400
+					</span>
+				</div>
+
+				<div class="button-block">
+					<button type="button" class="button orange">Optimize budget</button>
+				</div>
+
+
+			</div>
+		</div>
+		
+	</div>
+
+	<main>
+
+		<section id="cards">	
+
+			<div class="card plane"
+				data-ng-repeat="item in tripList"
+				data-ng-class="{'small': item.type == 'transportation'}">
+				<div class="time-line"></div>
+				<div
+				 data-ng-if="item.type == 'placeToVisit'"
+				 class="visit-place">
+				 		<div class="date start"
+				 				 data-ng-if="!$first">
+							<span class="number dib">{{item.departureDate | todate | date:"d"}}</span>
+							<div class="dib">
+							<span class="mounth">{{item.departureDate | todate | date:"MMMM" | slice:0:3}}</span>
+							<span class="day">{{item.departureDate | todate | date:"EEEE"}}</span>					
+						</div>
+						</div>
+				 		<div class="remove">
+							<a href="#" class="fd">FD</a>				
+							<a href="#"><i class="icon icon-eye-blocked"></i></a>
+							<button 
+								type="button" 
+								class="del-card"
+								data-ng-click="delCard($index)">
+									<i class="icon icon-cancel-circle"></i>
+							</button>
+						</div>	
+						<div class="preview">					
+							<div class="img-wrap">
+								<img src="{{item.imageURL}}" alt="{{item.cityName}}">
+							</div>
+							<div class="descr">
+							<h3>{{item.cityName}}</h3>
+							<p class="date-small"><i class="icon icon-calendar"></i>{{item.departureDate}} - {{item.departureDate}}</p>
+							<p class="price"><i class="normal">&#36;</i>{{item.totalPrice}}</p>
+						</div>
+					</div>
+				</div>
+
+				<div 
+					data-ng-if="item.type == 'transportation'"
+					class="ticket">
+						<div class="date end">
+							<span class="number dib">{{item.departureDate | todate | date:"d"}}</span>
+							<div class="dib">
+								<span class="mounth">{{item.departureDate | todate | date:"MMMM" | slice:0:3}}</span>
+								<span class="day">{{item.departureDate | todate | date:"EEEE"}}</span>											
+							</div>
+						</div>
+						<div class="info">
+							<div class="transport">
+								<i class="icon icon-airplane"></i>
+							</div>
+							<div class="start">
+								<p>KBP (Kiev)</p>
+								<p>dep 09.11.2015 <br> 01:00 </p>							
+							</div>
+							<div class="end">
+								<p>FCO (Rome)</p>
+								<p>arr 09.11.2015 <br> 03:40</p>
+							</div>
+							<p class="price"><i class="normal">&#36;</i>{{item.totalPrice}}</p>
+						</div>
+				</div>
+			</div>	
+
+
+			<!-- <div 
+				class="card plane"
+				data-ng-repeat="item in tripList"
+				data-ng-if="$even">		
+				<div class="time-line">
+					<div 
+						class="date start" 
+						data-ng-if="!$first">
+						<span class="number dib">{{item.departureDate | todate | date:"d"}}</span>
+						<div class="dib">
+							<span class="mounth">{{item.departureDate | todate | date:"MMMM" | slice:0:3}}</span>
+							<span class="day">{{item.departureDate | todate | date:"EEEE"}}</span>
+						</div>
+					</div>
+					<div class="date end">
+						<span class="number dib">{{item.departureDate | todate | date:"d"}}</span>
+						<div class="dib">
+							<span class="mounth">{{item.departureDate | todate | date:"MMMM" | slice:0:3}}</span>
+							<span class="day">{{item.departureDate | todate | date:"EEEE"}}</span>											
+						</div>
+					</div>
+				</div>
+				<div class="cont-wrap">
+					<div class="remove">
+						<a href="#" class="fd">FD</a>				
+						<a href="#"><i class="icon icon-eye-blocked"></i></a>
+						<button 
+							type="button" 
+							class="del-card"
+							data-ng-click="delCard($index)">
+								<i class="icon icon-cancel-circle"></i>
+						</button>
+					</div>					
+					<div class="preview">					
+						<div class="img-wrap">
+							<img src="{{item.imageURL}}" alt="{{item.cityName}}">
+						</div>
+						<div class="descr">
+							<h3>{{item.cityName}}</h3>
+							<p class="date"><i class="icon icon-calendar"></i>{{item.departureDate}} - {{item.departureDate}}</p>
+							<p class="price"><i class="normal">&#36;</i>{{item.totalPrice}}</p>
+						</div>
+					</div>
+					<div class="info">
+						<div class="transport">
+								<i class="icon icon-airplane"></i>
+						</div>
+						<div class="start">
+							<p>KBP (Kiev)</p>
+							<p>dep 09.11.2015 <br> 01:00 </p>							
+						</div>
+						<div class="end">
+							<p>FCO (Rome)</p>
+							<p>arr 09.11.2015 <br> 03:40</p>
+						</div>
+						<p class="price"><i class="normal">&#36;</i>{{item.totalPrice}}</p>
+					</div>
+				</div>
+			</div>	 -->
+
+
+
+			<div class="add-card">
+				<i class="icon icon-office"></i>
+				<h3>Add New City</h3>				
+				<p>Using drag&drop you can place it enywhere</p>
+				<button 
+					type="button" 
+					class="order"
+					data-ng-click="popupEdd($index)">
+					<i class="icon icon-credit-card"></i>
+					order trip
+				</button>
+			</div>			
+		</section>			
+	</main>
+	<popup data-name="popup-addCity"></popup>
+<ng-include src="'components/templates/footer.html'"></ng-include> 

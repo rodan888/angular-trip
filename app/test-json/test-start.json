@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Essential Italy",
+    "img": "country1.jpg",
+    "time": "5",    
+    "price": "500"
+  },
+  {
+    "title": "Essential Rome",
+    "img": "country2.jpg",
+    "time": "6",    
+    "price": "700"
+},
+{
+    "title": "Essential Ukraine",
+    "img": "country3.jpg",
+    "time": "3",    
+    "price": "400"
+}, 
+{
+    "title": "Italy",
+    "img": "country4.jpg",
+    "time": "5",    
+    "price": "1500"
+ }, 
+ {
+    "title": "Essential Angular",
+    "img": "country5.jpg",
+    "time": "3",    
+    "price": "450"
+ },
+ {
+    "title": "Jupiter",
+    "img": "country1.jpg",
+    "time": "4",    
+    "price": "800"
+},
+ {
+    "title": "Saturn",
+    "img": "country2.jpg",
+    "time": "5",    
+    "price": "500"
+},
+{
+    "title": "Uranus",
+    "img": "country3.jpg",
+    "time": "2",    
+    "price": "500"
+ },
+ {
+    "title": "Neptune",
+    "img": "country4.jpg",
+    "time": "5",    
+    "price": "800"
+ }
+]

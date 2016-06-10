@@ -1,0 +1,117 @@
+
++font-face("RobotoRegular", "../fonts/RobotoRegular/RobotoRegular", $file-formats: eot woff ttf)
++font-face("OpenSansBold", "../fonts/OpenSansBold/OpenSansBold", $file-formats: eot woff ttf)
++font-face("Inform", "../fonts/Inform/inform", $file-formats: eot woff ttf)
++font-face("RobotoLight", "../fonts/RobotoLight/RobotoLight", $file-formats: eot woff ttf)
+
+body
+	font-size: $fmd
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	font-family: "RobotoLight", sans-serif
+	overflow-x: hidden
+
+main
+	max-width: 1286px
+	margin: 0 auto
+	padding-top: 40px	
+a
+	&:hover
+		text-decoration: none
+li
+	list-style-type: none
+.clrp
+	padding: 0
+.hidden
+	display: none
+.normal
+	font-style: normal
+.dib
+	display: inline-block
+
+.date-small
+	color: $light
+	font-size: $fsm
+	i
+		margin-right: 5px
+
+label,span.label
+	font-size: $fx
+	display: block
+	margin-bottom: $mb10
+
+.price
+	color: $orange
+	font-size: 22px
+	font-weight: 600
+	&.free
+		color: $gray
+	&.big
+		font-size: 36px
+		i
+			margin-right: 5px
+.img-wrap
+	position: relative
+	height: 217px
+	overflow: hidden	
+	img
+		position: absolute
+		top: 50%
+		left: 50%
+		min-height: 100%
+		@include transform(translate(-50%,-50%))
+		transition: min-height 0.8s	
+
+.button-block
+	padding: 0 5px
+	&.center
+		text-align: center
+.button
+	text-transform: uppercase
+	color: $white
+	padding: 12px 20px
+	border-radius: 3px
+	font-size: $fx
+	background-color: $plane
+	box-shadow: 0 1px 5px #666
+	font-size: $fx
+	font-weight: 600		
+	transition: box-shadow 0.3s
+	&.orange
+		background-color: $orange
+		box-shadow: none		
+	&.light
+		background-color: transparent
+		border: 1px solid $plane
+		color: $black
+		box-shadow: none
+	&.full
+		display: block
+		text-align: center	
+		width: 100%	
+	&.big
+		display: inline-block
+		border-radius: none
+		line-height: 63px
+		padding: 0px 80px
+		text-transform: capitalize
+	&:hover
+		box-shadow: none
+
+.page-title
+	color: $white
+	font-size: 80px
+	font-family: "Inform"
+.title
+	color: $white	
+	font-size: $flg
+	text-align: center
+	&.big
+		font-size: 32px
+		font-family: 'RobotoRegular'
+	&.black
+		color: $black
+
+.country-wrap
+	text-align: center

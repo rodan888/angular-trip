@@ -1,0 +1,155 @@
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+
+input:focus:required:invalid,
+textarea:focus:required:invalid
+	color: #666
+input:required:valid,
+textarea:required:valid
+	color: #666
+
+input,textarea,button,select
+	outline: none
+	border: none	
+
+fieldset
+	border: none
+	margin: 0
+	padding: 0
+
+.form-group	
+	&.calendar
+		padding-left: 30px
+		position: relative
+		&:before
+			position: absolute
+			content: '\25be'
+			width: 20px
+			height: 30px
+			line-height: 26px
+			font-size: $flg
+			color: $gray-black
+			text-align: center
+			top: 30px
+			right: 0px
+		input
+			&:disabled
+				background-color: $white
+				cursor: pointer
+		>i
+			color: $gray-black
+			position: absolute
+			top: 33px
+			left: 5px
+			font-size: $flg			
+		label,.label
+			margin-left: -20px
+	.input
+		border: 1px solid $gray-black	
+		@include border-radius(3px)
+		height: 34px
+		color: $black
+		text-indent: 7px
+		width: 100%	
+	.select, select
+		text-indent: 7px
+		height: 34px
+		width: 100%
+		@include border-radius(3px)
+		background-color: $white
+		color: $black
+		border: 1px solid $gray-black
+		background-image: url(../img/ico-select.svg)
+		background-position: right center
+		background-repeat: no-repeat
+		padding-right: 32px
+		cursor: pointer
+		@include transition(background-position 0.3s ease)	
+		-webkit-appearance: none
+		-moz-appearance: none	
+		text-overflow: ''
+		-ms-appearance: none
+		appearance: none !important
+		&:focus
+			background-position: right -32px
+		&.number
+			width: 55px
+	&.checkbox		
+		padding: 0 5px	
+		padding-left: 20px
+		line-height: 10px
+		input[type='checkbox'] 
+			height: 0 
+			width: 0 		
+			&:checked 
+				+ label 
+					> span					
+						&:before
+							content: '\2713'				
+		label
+			cursor: pointer	
+			span
+				position: relative
+				&:before
+					content: ''
+					position: absolute
+					top: 0
+					left: -22px
+					color: $white
+					line-height: $s17
+					font-size: $fsm
+					font-weight: 600
+					text-align: center
+					width: $s17
+					height: $s17
+					border: 1px solid $white
+					border-radius: 3px
+					background-color: $blue
+
+.count-button	
+	margin-bottom: $s10
+	.count-wrap
+		display: inline-block
+		position: relative
+		width: 100%		
+		input
+			border: 1px solid $gray-black	
+			@include border-radius(3px)
+			height: 34px
+			color: $black
+			text-indent: 7px
+			width: 100%	
+		button
+			position: absolute
+			right: 1px
+			height: $s17
+			background-color: $blue
+			color: $white
+			line-height: 16px	
+			padding: 1px 6px
+			box-shadow: none
+			border-radius: 0						
+			&.increment
+				top: 1px				
+				border-top-right-radius: 3px
+				&:active
+					box-shadow: inset 1px 1px 1px $gray-black	
+			&.decrement
+				bottom: 1px
+				border-bottom-right-radius: 3px
+				&:active
+					box-shadow: inset 1px -1px 1px $gray-black	
