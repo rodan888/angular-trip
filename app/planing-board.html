@@ -6,8 +6,8 @@
 		<div class="mob-tabs">
 				<ul>
 					<li data-show="trip"					   
-					    ng-class="{'active': (selected == '1')}" 
-					    ng-click='selected=1'>Trip properties</li>
+						ng-class="{'active': (selected == '1')}" 
+						ng-click='selected=1'>Trip properties</li>
 					<li data-show="budget"
 						ng-class="{'active': (selected == '2')}" 
 						ng-click='selected=2'>Budget</li>
@@ -177,15 +177,15 @@
 				<div
 				 data-ng-if="item.type == 'placeToVisit'"
 				 class="visit-place">
-				 		<div class="date start"
-				 				 data-ng-if="!$first">
+						<div class="date start"
+								 data-ng-if="!$first">
 							<span class="number dib">{{item.departureDate | todate | date:"d"}}</span>
 							<div class="dib">
 							<span class="mounth">{{item.departureDate | todate | date:"MMMM" | slice:0:3}}</span>
 							<span class="day">{{item.departureDate | todate | date:"EEEE"}}</span>					
 						</div>
 						</div>
-				 		<div class="remove">
+						<div class="remove">
 							<a href="#" class="fd">FD</a>				
 							<a href="#"><i class="icon icon-eye-blocked"></i></a>
 							<button 
@@ -234,69 +234,6 @@
 				</div>
 			</div>	
 
-
-			<!-- <div 
-				class="card plane"
-				data-ng-repeat="item in tripList"
-				data-ng-if="$even">		
-				<div class="time-line">
-					<div 
-						class="date start" 
-						data-ng-if="!$first">
-						<span class="number dib">{{item.departureDate | todate | date:"d"}}</span>
-						<div class="dib">
-							<span class="mounth">{{item.departureDate | todate | date:"MMMM" | slice:0:3}}</span>
-							<span class="day">{{item.departureDate | todate | date:"EEEE"}}</span>
-						</div>
-					</div>
-					<div class="date end">
-						<span class="number dib">{{item.departureDate | todate | date:"d"}}</span>
-						<div class="dib">
-							<span class="mounth">{{item.departureDate | todate | date:"MMMM" | slice:0:3}}</span>
-							<span class="day">{{item.departureDate | todate | date:"EEEE"}}</span>											
-						</div>
-					</div>
-				</div>
-				<div class="cont-wrap">
-					<div class="remove">
-						<a href="#" class="fd">FD</a>				
-						<a href="#"><i class="icon icon-eye-blocked"></i></a>
-						<button 
-							type="button" 
-							class="del-card"
-							data-ng-click="delCard($index)">
-								<i class="icon icon-cancel-circle"></i>
-						</button>
-					</div>					
-					<div class="preview">					
-						<div class="img-wrap">
-							<img src="{{item.imageURL}}" alt="{{item.cityName}}">
-						</div>
-						<div class="descr">
-							<h3>{{item.cityName}}</h3>
-							<p class="date"><i class="icon icon-calendar"></i>{{item.departureDate}} - {{item.departureDate}}</p>
-							<p class="price"><i class="normal">&#36;</i>{{item.totalPrice}}</p>
-						</div>
-					</div>
-					<div class="info">
-						<div class="transport">
-								<i class="icon icon-airplane"></i>
-						</div>
-						<div class="start">
-							<p>KBP (Kiev)</p>
-							<p>dep 09.11.2015 <br> 01:00 </p>							
-						</div>
-						<div class="end">
-							<p>FCO (Rome)</p>
-							<p>arr 09.11.2015 <br> 03:40</p>
-						</div>
-						<p class="price"><i class="normal">&#36;</i>{{item.totalPrice}}</p>
-					</div>
-				</div>
-			</div>	 -->
-
-
-
 			<div class="add-card">
 				<i class="icon icon-office"></i>
 				<h3>Add New City</h3>				
@@ -310,6 +247,38 @@
 				</button>
 			</div>			
 		</section>			
+
+		<div class="map" data-ng-controller="mapCtrl">	
+			<div class="button-block">
+				<button type="button" class="button" ng-click="test()">Add test place</button>			
+			</div>
+
+			<ng-map 
+				zoom="{{zoom}}"
+				center="{{wayPoints[0].location.lat}}, {{wayPoints[0].location.lng}}" 
+				style="height:100%" 			  	
+				styles="{{mapStyle}}">
+	  <!--       <directions 
+			  draggable="true"          
+			  waypoints="{{wayPoints}}"
+			  origin="kyiv"
+			  destination="odessa">
+			</directions> -->       
+				<marker 
+					data-ng-repeat="point in wayPoints"
+					position="{{shape()[$index]}}" 
+					title="{{point.place}}">        		
+				</marker>
+				<shape 
+					id="polyline" 
+					name="polyline"
+					geodesic="true" 
+					stroke-color="#FF7900"
+					stroke-weight="3"			     
+					path="{{shape()}}" >
+				</shape>        	
+			</ng-map> 
+		</div>
 	</main>
 	<popup data-name="popup-addCity"></popup>
 <ng-include src="'components/templates/footer.html'"></ng-include> 
